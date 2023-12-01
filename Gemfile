@@ -53,8 +53,8 @@ end
 gem 'graphql', '2.0.27'
 gem 'graphql-client'
 
-# add linter eslint-rails
-gem 'eslint-rails'
+# add dotenv
+gem 'dotenv'
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
