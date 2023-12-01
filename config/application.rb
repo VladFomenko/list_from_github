@@ -2,6 +2,22 @@ require_relative 'boot'
 
 require 'rails/all'
 
+require 'graphql/client'
+require 'graphql/client/http'
+
+module Github
+  HTTP = GraphQL::Client::HTTP.new('https://api.github.com/graphql') do
+    def headers(_context)
+      {
+        'Authorization': "Bearer #{ENV['GITHUB_API_KEY']}"
+      }
+    end
+  end
+
+  Schema = GraphQL::Client.load_schema(HTTP)
+  Client = GraphQL::Client.new(schema: Schema, execute: HTTP)
+end
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
