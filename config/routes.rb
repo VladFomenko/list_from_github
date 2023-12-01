@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   # Defines the root path route ("/")
-  root 'git_hub#index'
+  root 'git_hub#new'
+
+  get '/git_hub', to: 'git_hub#show', as: 'git_hub_show'
 end
