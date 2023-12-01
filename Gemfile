@@ -49,11 +49,12 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mswin mswin64 mingw x64_mingw]
 end
 
-# add linter rubocop
-gem 'rubocop', require: false
+# add graphql
+gem 'graphql', '2.0.27'
+gem 'graphql-client'
 
-# add linter eslint-rails
-gem 'eslint-rails'
+# add dotenv
+gem 'dotenv'
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
@@ -66,6 +67,12 @@ group :development do
   # gem "spring"
 
   gem 'error_highlight', '>= 0.4.0', platforms: [:ruby]
+
+  # add linter rubocop
+  gem 'rubocop', require: false
+
+  # add linter eslint-rails
+  gem 'eslint-rails'
 end
 
 group :test do
