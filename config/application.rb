@@ -1,6 +1,24 @@
-require_relative "boot"
+require_relative 'boot'
 
-require "rails/all"
+require 'dotenv/load'
+
+require 'rails/all'
+
+require 'graphql/client'
+require 'graphql/client/http'
+
+module Github
+  HTTP = GraphQL::Client::HTTP.new('https://api.github.com/graphql') do
+    def headers(_context)
+      {
+        'Authorization': "Bearer #{ENV['GITHUB_API_KEY']}"
+      }
+    end
+  end
+
+  Schema = GraphQL::Client.load_schema(HTTP)
+  Client = GraphQL::Client.new(schema: Schema, execute: HTTP)
+end
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -14,7 +32,7 @@ module ListFromGithub
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w(assets tasks))
+    config.autoload_lib(ignore: %w[assets tasks])
 
     # Configuration for the application, engines, and railties goes here.
     #

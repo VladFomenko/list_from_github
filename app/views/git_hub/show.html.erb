@@ -1,0 +1,8 @@
+<div class="container py-3" style="height: calc(100vh - 10rem);">
+  <ul class="list-group list-group-light">
+    <li class="list-group-item"><%= @user_data[:name] %></li>
+    <% @user_data[:repo].each do |repo| %>
+      <li class="list-group-item">- <%= repo %></li>
+    <% end %>
+  </ul>
+</div>
