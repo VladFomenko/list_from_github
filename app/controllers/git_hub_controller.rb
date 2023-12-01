@@ -1,17 +1,21 @@
 class GitHubController < ApplicationController
   include GithubQuery
 
-  def index
-    response = Github::Client.query(GithubQuery::QueryString, variables: { login: 'VladFomenko' })
+  before_action :git_gub_params, only: :show
+
+  def show
+    response = Github::Client.query(GithubQuery::QueryString, variables: { login: params[:login] })
 
     @user_data = parse_response(response)
   end
+
+  def new; end
 
   private
 
   def parse_response(response)
     result = { name: '', repo: [] }
-    result[:name] = response.data.user.name.present? ? "Name: #{response.data.user.name}" : 'Name: Unknown'
+    result[:name] = response.data.user.name.present? ? response.data.user.name : 'Unknown'
 
     repositories = response.data.user.repositories.nodes
 
@@ -20,5 +24,9 @@ class GitHubController < ApplicationController
     end
 
     result
+  end
+
+  def git_gub_params
+    params.permit(:login)
   end
 end
