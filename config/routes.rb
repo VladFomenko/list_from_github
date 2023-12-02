@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   root 'git_hub#new'
 
   get '/git_hub', to: 'git_hub#show', as: 'git_hub_show'
+  get '/git_hub', to: 'git_hub#new', as: 'new'
+
+  # resource :git_hub, only: %i[show new]
 end

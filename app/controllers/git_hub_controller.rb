@@ -7,9 +7,14 @@ class GitHubController < ApplicationController
     response = Github::Client.query(GithubQuery::QueryString, variables: { login: params[:login] })
 
     @user_data = parse_response(response)
+  rescue StandardError
+    flash.now[:error] = response.original_hash['errors'].map { |error| error['message'] }
+    render :new
   end
 
-  def new; end
+  def new
+    flash.now[:error] = nil
+  end
 
   private
 
