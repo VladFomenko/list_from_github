@@ -44,17 +44,25 @@ gem 'bootsnap', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'debug', platforms: %i[mri mswin mswin64 mingw x64_mingw]
-end
-
 # add graphql
 gem 'graphql', '2.0.27'
 gem 'graphql-client'
 
 # add dotenv
 gem 'dotenv'
+
+group :development, :test do
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'debug', platforms: %i[mri mswin mswin64 mingw x64_mingw]
+
+  # add rspec tests
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 6.1.0'
+
+  # add for Stubbing GraphQL
+  gem 'vcr'
+  gem 'webmock'
+end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
