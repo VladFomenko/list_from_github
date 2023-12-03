@@ -55,7 +55,7 @@ class GitHubController < ApplicationController
       @response = query(@login, PAGE_SIZE, @start_cursor)
     end
 
-    return unless @response.original_hash['errors'][0]['message'].nil?
+    return unless @response.original_hash['errors'].nil? || @response.original_hash['errors'][0]['message'].nil?
 
     @has_next_page = @response.original_hash['data']['user']['repositories']['pageInfo']['hasNextPage']
     @end_cursor = @response.original_hash['data']['user']['repositories']['pageInfo']['endCursor']
