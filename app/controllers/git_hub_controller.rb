@@ -7,7 +7,7 @@ class GitHubController < ApplicationController
   def show
     @user_data = parse_response(@response)
   rescue StandardError
-    flash.now[:error] = response.original_hash['errors'].map { |error| error['message'] }
+    flash.now[:error] = @response.original_hash['errors'].map { |error| error['message'] }
     render :new
   end
 
