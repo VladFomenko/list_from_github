@@ -1,13 +1,17 @@
 <div class="form-container">
   <div class="form-wrapper">
-    <form action="<%= git_hub_show_path %>" method="get">
-      <div class="mb-3 text-center">
-        <label for="exampleInputLogin" class="form-label">Please, enter login from GitHub</label>
-        <input type="text" class="form-control form-input" id="exampleInputLogin" aria-describedby="loginHelp" name="login">
+    <%= form_tag(git_hub_show_path, method: :get) do %>
+      <div class="form-container">
+        <div class="form-wrapper">
+          <div class="mb-3 text-center">
+            <%= label_tag :login, "Please, enter login from GitHub", class: "form-label" %>
+            <%= text_field_tag :login, nil, class: "form-control form-input", id: "exampleInputLogin", aria_describedby: "loginHelp" %>
+          </div>
+          <div class="text-center">
+            <%= submit_tag "Submit", class: "btn submit-button" %>
+          </div>
+        </div>
       </div>
-      <div class="text-center">
-        <button type="submit" class="btn submit-button">Submit</button>
-      </div>
-    </form>
+    <% end %>
   </div>
 </div>
