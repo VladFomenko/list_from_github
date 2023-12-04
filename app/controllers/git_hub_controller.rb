@@ -2,7 +2,8 @@ class GitHubController < ApplicationController
   include GithubQuery
   include Validatable
 
-  before_action :git_gub_params, :set_login, :set_has_next_page, :set_end_cursor, :set_start_cursor, :logic_pagi, only: :show
+  before_action :git_gub_params, :set_login, :set_has_next_page, :set_end_cursor, :set_start_cursor, :logic_pagi,
+                only: :show
 
   def show
     @user_data = parse_response(@response)
@@ -21,9 +22,7 @@ class GitHubController < ApplicationController
     result = { name: '', repo: [] }
     result[:name] = response.data.user.name.present? ? response.data.user.name : ISNT_SET_NAME_USER
 
-    repositories = response.data.user.repositories.edges
-
-    repositories.each do |repo|
+    response.data.user.repositories.edges.each do |repo|
       result[:repo] << repo.node.name
     end
 
@@ -60,11 +59,11 @@ class GitHubController < ApplicationController
     @has_next_page = @response.original_hash['data']['user']['repositories']['pageInfo']['hasNextPage']
     @end_cursor = @response.original_hash['data']['user']['repositories']['pageInfo']['endCursor']
     @start_cursor = @response.original_hash['data']['user']['repositories']['pageInfo']['startCursor']
-
   end
 
   def query(login, page_size = PAGE_SIZE, cursor = nil)
-    @response = Github::Client.query(GithubQuery::QueryString, variables: { login: login, pageSize: page_size, cursor: cursor })
+    @response = Github::Client.query(GithubQuery::QueryString,
+                                     variables: { login:, pageSize: page_size, cursor: })
   end
 
   def git_gub_params
