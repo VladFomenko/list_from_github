@@ -5,10 +5,8 @@ http_interactions:
     uri: https://api.github.com/graphql
     body:
       encoding: UTF-8
-      string: '{"query":"query GithubQuery__QueryString($login: String!, $pageSize:
-        Int!, $cursor: String) {\n  user(login: $login) {\n    name\n    repositories(first:
-        $pageSize, after: $cursor) {\n      edges {\n        node {\n          name\n        }\n        cursor\n      }\n      pageInfo
-        {\n        hasNextPage\n        endCursor\n        startCursor\n      }\n    }\n  }\n}","variables":{"login":"VladFomenko","pageSize":16,"cursor":null},"operationName":"GithubQuery__QueryString"}'
+      string: '{"query":"query GithubQuery__QueryString($login: String!) {\n  user(login:
+        $login) {\n    name\n    repositories(first: 10) {\n      nodes {\n        name\n      }\n    }\n  }\n}","variables":{"login":"VladFomenko"},"operationName":"GithubQuery__QueryString"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -28,7 +26,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Mon, 04 Dec 2023 10:04:46 GMT
+      - Sat, 02 Dec 2023 16:42:34 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -44,11 +42,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4985'
+      - '4990'
       X-Ratelimit-Reset:
-      - '1701686931'
+      - '1701535746'
       X-Ratelimit-Used:
-      - '15'
+      - '10'
       X-Ratelimit-Resource:
       - graphql
       Access-Control-Expose-Headers:
@@ -73,9 +71,9 @@ http_interactions:
       Vary:
       - Accept-Encoding, Accept, X-Requested-With
       X-Github-Request-Id:
-      - CF8A:3BA4:CBFD8:CDF62:656DA43E
+      - D488:A1D0:28859FBC:28FD4829:656B5E79
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"user":{"name":"Vladyslav Fomenko","repositories":{"edges":[{"node":{"name":"RubyHW"},"cursor":"Y3Vyc29yOnYyOpHOIQu78w=="},{"node":{"name":"ror_geekhub_jira"},"cursor":"Y3Vyc29yOnYyOpHOJDMMug=="},{"node":{"name":"ror_geekhub_jira"},"cursor":"Y3Vyc29yOnYyOpHOJfgpEg=="},{"node":{"name":"hospital_control"},"cursor":"Y3Vyc29yOnYyOpHOJijqfA=="},{"node":{"name":"api"},"cursor":"Y3Vyc29yOnYyOpHOKpLN8g=="},{"node":{"name":"test_deploy_netlify"},"cursor":"Y3Vyc29yOnYyOpHOKxbfmw=="}],"pageInfo":{"hasNextPage":false,"endCursor":"Y3Vyc29yOnYyOpHOKxbfmw==","startCursor":"Y3Vyc29yOnYyOpHOIQu78w=="}}}}}'
-  recorded_at: Mon, 04 Dec 2023 10:04:46 GMT
+      string: '{"data":{"user":{"name":"Vladyslav Fomenko","repositories":{"nodes":[{"name":"RubyHW"},{"name":"ror_geekhub_jira"},{"name":"ror_geekhub_jira"},{"name":"hospital_control"},{"name":"api"},{"name":"test_deploy_netlify"}]}}}}'
+  recorded_at: Sat, 02 Dec 2023 16:42:33 GMT
 recorded_with: VCR 6.2.0
