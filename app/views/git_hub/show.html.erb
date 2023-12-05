@@ -1,4 +1,4 @@
-<div class="container py-3" style="height: calc(100vh - 10rem);">
+<div class="container py-3 page-container">
   <ul class="list-group list-group-light" id="repositoriesList">
     <li class="list-group-item"><%= @user_data[:name] %></li>
     <% @user_data[:repo].each do |repo| %>
@@ -6,7 +6,7 @@
     <% end %>
   </ul>
 
-  <nav aria-label="Page navigation example" style="position: absolute; bottom: 10px;">
+  <nav aria-label="Page navigation example" class="page-navigation">
     <ul class="pagination">
       <li class="page-item">
         <a class="page-link" href="<%= url_for(controller: 'git_hub', action: 'show', login: @login, start_cursor: @start_cursor) %>">Start page</a>
@@ -14,9 +14,8 @@
       <% if @has_next_page %>
         <li class="page-item">
           <a class="page-link" href="<%= url_for(controller: 'git_hub', action: 'show', login: @login, has_next_page: @has_next_page, end_cursor: @end_cursor) %>">Next page</a>
-      </li>
-        <% end %>
+        </li>
+      <% end %>
     </ul>
   </nav>
-
 </div>

@@ -12,21 +12,16 @@ class GitHubController < ApplicationController
     render :new
   end
 
-  def new
-    flash.now[:error] = nil
-  end
+  def new; end
 
   private
 
   def parse_response(response)
-    result = { name: '', repo: [] }
-    result[:name] = response.data.user.name.present? ? response.data.user.name : ISNT_SET_NAME_USER
-
-    response.data.user.repositories.edges.each do |repo|
-      result[:repo] << repo.node.name
-    end
-
-    result
+    user = response.data.user
+    {
+      name: user.name.presence || ISNT_SET_NAME_USER,
+      repo: user.repositories.edges.map { |repo| repo.node.name }
+    }
   end
 
   def set_login
