@@ -1,0 +1,32 @@
+.form-container {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  max-width: 300px;
+  width: 100%;
+}
+
+.form-wrapper form {
+  max-width: 300px;
+  width: 100%;
+}
+
+.form-label {
+  width: 100%;
+  text-decoration: underline;
+}
+
+.form-input {
+  width: 100%;
+  border-width: 5px;
+}
+
+.submit-button {
+  width: 100%;
+  background-color: #385170;
+}
