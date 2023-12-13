@@ -45,8 +45,7 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 # add graphql
-gem 'graphql', '2.0.27'
-gem 'graphql-client'
+gem 'graphql'
 
 # add dotenv
 gem 'dotenv'
@@ -93,3 +92,4 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+gem "graphiql-rails", group: :development
