@@ -45,8 +45,7 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 # add graphql
-gem 'graphql', '2.0.27'
-gem 'graphql-client'
+gem 'graphql'
 
 # add dotenv
 gem 'dotenv'
@@ -86,6 +85,9 @@ group :development do
 
   # add linter eslint-rails
   gem 'eslint-rails'
+
+  # add for graphiql page
+  gem 'graphiql-rails'
 end
 
 group :test do

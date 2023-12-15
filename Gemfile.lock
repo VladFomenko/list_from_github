@@ -123,10 +123,10 @@ GEM
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    graphiql-rails (1.9.0)
+      railties
+      sprockets-rails
     graphql (2.0.27)
-    graphql-client (0.18.0)
-      activesupport (>= 3.0)
-      graphql
     hashdiff (1.0.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -333,8 +333,8 @@ DEPENDENCIES
   dotenv
   error_highlight (>= 0.4.0)
   eslint-rails
-  graphql (= 2.0.27)
-  graphql-client
+  graphiql-rails
+  graphql
   importmap-rails
   jbuilder
   jquery-rails
