@@ -85,6 +85,9 @@ group :development do
 
   # add linter eslint-rails
   gem 'eslint-rails'
+
+  # add for graphiql page
+  gem 'graphiql-rails'
 end
 
 group :test do
@@ -92,4 +95,3 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
-gem "graphiql-rails", group: :development
