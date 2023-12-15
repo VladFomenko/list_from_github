@@ -1,0 +1,22 @@
+<div class="container py-3 page-container">
+  <ul class="list-group list-group-light" id="repositoriesList">
+    <li class="list-group-item"><%= @user_data['name'] %></li>
+    <% @user_data['repos'].each do |repo| %>
+      <li class="list-group-item">- <%= repo %></li>
+  <% end %>
+  </ul>
+
+<%# TODO: add pagi %>
+<!--  <nav aria-label="Page navigation example" class="page-navigation">-->
+<!--    <ul class="pagination">-->
+<!--      <li class="page-item">-->
+<!--        <a class="page-link" href="<%#= url_for(controller: 'git_hub', action: 'show', login: @login, start_cursor: @start_cursor) %>">Start page</a>-->
+<!--      </li>-->
+      <%# if @has_next_page %>
+<!--        <li class="page-item">-->
+<!--          <a class="page-link" href="<%#= url_for(controller: 'git_hub', action: 'show', login: @login, has_next_page: @has_next_page, end_cursor: @end_cursor) %>">Next page</a>-->
+<!--        </li>-->
+      <%# end %>
+<!--    </ul>-->
+<!--  </nav>-->
+</div>
