@@ -162,6 +162,8 @@ GEM
     minitest (5.20.0)
     msgpack (1.7.2)
     mutex_m (0.2.0)
+    net-http-persistent (4.0.2)
+      connection_pool (~> 2.2)
     net-imap (0.4.7)
       date
       net-protocol
@@ -345,6 +347,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   jquery-rails
+  net-http-persistent (~> 4.0, >= 4.0.2)
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.1)

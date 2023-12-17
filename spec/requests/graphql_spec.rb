@@ -68,24 +68,27 @@ RSpec.describe GraphqlController, type: :controller do
   describe '#handle_error_in_development' do
     let(:controller_instance) { GraphqlController.new }
 
-    it 'renders a JSON response with error details and status 500' do
+    it 'logs error message and backtrace, sets flash and renders new with internal server error status' do
       error_message = 'An error occurred'
       backtrace = ['line 1', 'line 2']
 
-      expected_response = {
-        errors: [{ message: error_message, backtrace: }],
-        data: {}
-      }
+      expected_flash_message = "An error occurred: #{error_message}"
+      expected_response = { error: expected_flash_message }
 
       expect(controller_instance).to receive(:logger).twice.and_return(logger = double('Logger'))
       expect(logger).to receive(:error).with(error_message)
       expect(logger).to receive(:error).with(backtrace.join("\n"))
 
-      expect(controller_instance).to receive(:render).with(json: expected_response, status: 500)
+      allow(controller_instance).to receive_message_chain(:request, :flash).and_return({})
+      expect(controller_instance).to receive(:render).with('new', status: :internal_server_error)
 
       controller_instance.send(:handle_error_in_development, StandardError.new(error_message).tap do |e|
-                                                               e.set_backtrace(backtrace)
-                                                             end)
+        e.set_backtrace(backtrace)
+      end)
+
+      expect(controller_instance.flash[:error]).to eq(expected_flash_message)
     end
   end
+
+
 end
