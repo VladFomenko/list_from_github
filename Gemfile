@@ -66,6 +66,9 @@ group :development, :test do
   # add for Stubbing GraphQL
   gem 'vcr'
   gem 'webmock'
+
+  # add for checking test coverage
+  gem 'simplecov', require: false
 end
 
 group :development do
