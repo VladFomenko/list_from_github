@@ -11,7 +11,6 @@ class GraphqlController < ApplicationController
 
     result = ListFromGithubSchema.execute(query, variables:)
     @user_data = JSON.parse(result['data']['gitDataUser'])
-
   rescue StandardError => e
     handle_error_in_development(e)
   end
