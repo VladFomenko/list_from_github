@@ -15,6 +15,8 @@ module Types
     private
 
     def get_data(requested_url)
+      raise ArgumentError, 'Empty URL' if requested_url.blank?
+
       url = URI(requested_url)
       http = Net::HTTP.new(url.host, url.port)
       http.use_ssl = true
@@ -23,14 +25,14 @@ module Types
 
       response = http.request(request)
 
-      raise ActiveRecord::RecordNotFound unless response.code == '200'
+      raise StandardError, "GitHub API request failed with code: #{response.code}" if response.code != '200'
 
       JSON.parse(response.body)
     end
 
     def get_name(requested_url)
       user_data = get_data(requested_url)
-      user_data['name'] || 'name not set'
+      user_data['name'] || 'Name not set'
     end
 
     def get_repos(requested_url)

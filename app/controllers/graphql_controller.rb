@@ -11,9 +11,8 @@ class GraphqlController < ApplicationController
 
     result = ListFromGithubSchema.execute(query, variables:)
     @user_data = JSON.parse(result['data']['gitDataUser'])
-  rescue StandardError => e
-    raise e unless Rails.env.development?
 
+  rescue StandardError => e
     handle_error_in_development(e)
   end
 
@@ -42,7 +41,8 @@ class GraphqlController < ApplicationController
     logger.error e.message
     logger.error e.backtrace.join("\n")
 
-    render json: { errors: [{ message: e.message, backtrace: e.backtrace }], data: {} }, status: 500
+    flash[:error] = "An error occurred: #{e.message}"
+    render 'new', status: :internal_server_error
   end
 
   def set_login
