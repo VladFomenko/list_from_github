@@ -1,25 +1,20 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://api.github.com/graphql
+    method: get
+    uri: https://api.github.com/users/VladFomenko
     body:
-      encoding: UTF-8
-      string: '{"query":"query GithubQuery__QueryString($login: String!, $pageSize:
-        Int!, $cursor: String) {\n  user(login: $login) {\n    name\n    repositories(first:
-        $pageSize, after: $cursor) {\n      edges {\n        node {\n          name\n        }\n        cursor\n      }\n      pageInfo
-        {\n        hasNextPage\n        endCursor\n        startCursor\n      }\n    }\n  }\n}","variables":{"login":"VladFomenko","pageSize":16,"cursor":null},"operationName":"GithubQuery__QueryString"}'
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - application/json
+      - "*/*"
       User-Agent:
       - Ruby
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer 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
+      Host:
+      - api.github.com
   response:
     status:
       code: 200
@@ -28,29 +23,21 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Mon, 04 Dec 2023 10:13:14 GMT
+      - Sun, 17 Dec 2023 17:45:04 GMT
       Content-Type:
       - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      X-Oauth-Scopes:
-      - ''
-      X-Accepted-Oauth-Scopes:
-      - repo
-      Github-Authentication-Token-Expiration:
-      - 2023-12-29 18:17:49 UTC
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"e068fe4c3e124dfb2a83d7a0001ce036420dd50705108d5df91e6aa5ec96cd06"
+      Last-Modified:
+      - Mon, 04 Dec 2023 10:33:36 GMT
       X-Github-Media-Type:
-      - github.v4
-      X-Ratelimit-Limit:
-      - '5000'
-      X-Ratelimit-Remaining:
-      - '4980'
-      X-Ratelimit-Reset:
-      - '1701686931'
-      X-Ratelimit-Used:
-      - '20'
-      X-Ratelimit-Resource:
-      - graphql
+      - github.v3; format=json
+      X-Github-Api-Version-Selected:
+      - '2022-11-28'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
@@ -70,12 +57,101 @@ http_interactions:
       - origin-when-cross-origin, strict-origin-when-cross-origin
       Content-Security-Policy:
       - default-src 'none'
-      Vary:
-      - Accept-Encoding, Accept, X-Requested-With
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Ratelimit-Reset:
+      - '1702838704'
+      X-Ratelimit-Resource:
+      - core
+      X-Ratelimit-Used:
+      - '1'
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '492'
       X-Github-Request-Id:
-      - CFC0:FC29:2F97F0FC:3026ECFA:656DA63A
+      - 8188:28C2B:4B33EC3:4C66541:657F33A0
     body:
       encoding: ASCII-8BIT
-      string: '{"data":{"user":{"name":"Vladyslav Fomenko","repositories":{"edges":[{"node":{"name":"RubyHW"},"cursor":"Y3Vyc29yOnYyOpHOIQu78w=="},{"node":{"name":"ror_geekhub_jira"},"cursor":"Y3Vyc29yOnYyOpHOJDMMug=="},{"node":{"name":"ror_geekhub_jira"},"cursor":"Y3Vyc29yOnYyOpHOJfgpEg=="},{"node":{"name":"hospital_control"},"cursor":"Y3Vyc29yOnYyOpHOJijqfA=="},{"node":{"name":"api"},"cursor":"Y3Vyc29yOnYyOpHOKpLN8g=="},{"node":{"name":"test_deploy_netlify"},"cursor":"Y3Vyc29yOnYyOpHOKxbfmw=="}],"pageInfo":{"hasNextPage":false,"endCursor":"Y3Vyc29yOnYyOpHOKxbfmw==","startCursor":"Y3Vyc29yOnYyOpHOIQu78w=="}}}}}'
-  recorded_at: Mon, 04 Dec 2023 10:13:14 GMT
+      string: '{"login":"VladFomenko","id":41300309,"node_id":"MDQ6VXNlcjQxMzAwMzA5","avatar_url":"https://avatars.githubusercontent.com/u/41300309?v=4","gravatar_id":"","url":"https://api.github.com/users/VladFomenko","html_url":"https://github.com/VladFomenko","followers_url":"https://api.github.com/users/VladFomenko/followers","following_url":"https://api.github.com/users/VladFomenko/following{/other_user}","gists_url":"https://api.github.com/users/VladFomenko/gists{/gist_id}","starred_url":"https://api.github.com/users/VladFomenko/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/VladFomenko/subscriptions","organizations_url":"https://api.github.com/users/VladFomenko/orgs","repos_url":"https://api.github.com/users/VladFomenko/repos","events_url":"https://api.github.com/users/VladFomenko/events{/privacy}","received_events_url":"https://api.github.com/users/VladFomenko/received_events","type":"User","site_admin":false,"name":"Vladyslav
+        Fomenko","company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":"junior
+        Ruby on Rails developer","twitter_username":null,"public_repos":5,"public_gists":0,"followers":5,"following":8,"created_at":"2018-07-16T15:49:05Z","updated_at":"2023-12-04T10:33:36Z"}'
+  recorded_at: Sun, 17 Dec 2023 17:45:04 GMT
+- request:
+    method: get
+    uri: https://api.github.com/users/VladFomenko/repos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.github.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sun, 17 Dec 2023 17:45:04 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"d5319b7a04c035ece78e6cf8c92df177194bbeebb1ff08144e7f5f4619951385"
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Github-Api-Version-Selected:
+      - '2022-11-28'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '58'
+      X-Ratelimit-Reset:
+      - '1702838704'
+      X-Ratelimit-Resource:
+      - core
+      X-Ratelimit-Used:
+      - '2'
+      Accept-Ranges:
+      - bytes
+      Transfer-Encoding:
+      - chunked
+      X-Github-Request-Id:
+      - 8198:142567:10CCF176:110566E0:657F33A0
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":640215676,"node_id":"R_kgDOJijqfA","name":"hospital_control","full_name":"VladFomenko/hospital_control","private":false,"owner":{"login":"VladFomenko","id":41300309,"node_id":"MDQ6VXNlcjQxMzAwMzA5","avatar_url":"https://avatars.githubusercontent.com/u/41300309?v=4","gravatar_id":"","url":"https://api.github.com/users/VladFomenko","html_url":"https://github.com/VladFomenko","followers_url":"https://api.github.com/users/VladFomenko/followers","following_url":"https://api.github.com/users/VladFomenko/following{/other_user}","gists_url":"https://api.github.com/users/VladFomenko/gists{/gist_id}","starred_url":"https://api.github.com/users/VladFomenko/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/VladFomenko/subscriptions","organizations_url":"https://api.github.com/users/VladFomenko/orgs","repos_url":"https://api.github.com/users/VladFomenko/repos","events_url":"https://api.github.com/users/VladFomenko/events{/privacy}","received_events_url":"https://api.github.com/users/VladFomenko/received_events","type":"User","site_admin":false},"html_url":"https://github.com/VladFomenko/hospital_control","description":null,"fork":false,"url":"https://api.github.com/repos/VladFomenko/hospital_control","forks_url":"https://api.github.com/repos/VladFomenko/hospital_control/forks","keys_url":"https://api.github.com/repos/VladFomenko/hospital_control/keys{/key_id}","collaborators_url":"https://api.github.com/repos/VladFomenko/hospital_control/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/VladFomenko/hospital_control/teams","hooks_url":"https://api.github.com/repos/VladFomenko/hospital_control/hooks","issue_events_url":"https://api.github.com/repos/VladFomenko/hospital_control/issues/events{/number}","events_url":"https://api.github.com/repos/VladFomenko/hospital_control/events","assignees_url":"https://api.github.com/repos/VladFomenko/hospital_control/assignees{/user}","branches_url":"https://api.github.com/repos/VladFomenko/hospital_control/branches{/branch}","tags_url":"https://api.github.com/repos/VladFomenko/hospital_control/tags","blobs_url":"https://api.github.com/repos/VladFomenko/hospital_control/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/VladFomenko/hospital_control/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/VladFomenko/hospital_control/git/refs{/sha}","trees_url":"https://api.github.com/repos/VladFomenko/hospital_control/git/trees{/sha}","statuses_url":"https://api.github.com/repos/VladFomenko/hospital_control/statuses/{sha}","languages_url":"https://api.github.com/repos/VladFomenko/hospital_control/languages","stargazers_url":"https://api.github.com/repos/VladFomenko/hospital_control/stargazers","contributors_url":"https://api.github.com/repos/VladFomenko/hospital_control/contributors","subscribers_url":"https://api.github.com/repos/VladFomenko/hospital_control/subscribers","subscription_url":"https://api.github.com/repos/VladFomenko/hospital_control/subscription","commits_url":"https://api.github.com/repos/VladFomenko/hospital_control/commits{/sha}","git_commits_url":"https://api.github.com/repos/VladFomenko/hospital_control/git/commits{/sha}","comments_url":"https://api.github.com/repos/VladFomenko/hospital_control/comments{/number}","issue_comment_url":"https://api.github.com/repos/VladFomenko/hospital_control/issues/comments{/number}","contents_url":"https://api.github.com/repos/VladFomenko/hospital_control/contents/{+path}","compare_url":"https://api.github.com/repos/VladFomenko/hospital_control/compare/{base}...{head}","merges_url":"https://api.github.com/repos/VladFomenko/hospital_control/merges","archive_url":"https://api.github.com/repos/VladFomenko/hospital_control/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/VladFomenko/hospital_control/downloads","issues_url":"https://api.github.com/repos/VladFomenko/hospital_control/issues{/number}","pulls_url":"https://api.github.com/repos/VladFomenko/hospital_control/pulls{/number}","milestones_url":"https://api.github.com/repos/VladFomenko/hospital_control/milestones{/number}","notifications_url":"https://api.github.com/repos/VladFomenko/hospital_control/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/VladFomenko/hospital_control/labels{/name}","releases_url":"https://api.github.com/repos/VladFomenko/hospital_control/releases{/id}","deployments_url":"https://api.github.com/repos/VladFomenko/hospital_control/deployments","created_at":"2023-05-13T11:08:24Z","updated_at":"2023-05-21T10:29:53Z","pushed_at":"2023-10-08T16:55:42Z","git_url":"git://github.com/VladFomenko/hospital_control.git","ssh_url":"git@github.com:VladFomenko/hospital_control.git","clone_url":"https://github.com/VladFomenko/hospital_control.git","svn_url":"https://github.com/VladFomenko/hospital_control","homepage":null,"size":178,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":false,"has_pages":false,"has_discussions":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"public","forks":0,"open_issues":0,"watchers":0,"default_branch":"main"},{"id":725074512,"node_id":"R_kgDOKzfCUA","name":"list_from_github","full_name":"VladFomenko/list_from_github","private":false,"owner":{"login":"VladFomenko","id":41300309,"node_id":"MDQ6VXNlcjQxMzAwMzA5","avatar_url":"https://avatars.githubusercontent.com/u/41300309?v=4","gravatar_id":"","url":"https://api.github.com/users/VladFomenko","html_url":"https://github.com/VladFomenko","followers_url":"https://api.github.com/users/VladFomenko/followers","following_url":"https://api.github.com/users/VladFomenko/following{/other_user}","gists_url":"https://api.github.com/users/VladFomenko/gists{/gist_id}","starred_url":"https://api.github.com/users/VladFomenko/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/VladFomenko/subscriptions","organizations_url":"https://api.github.com/users/VladFomenko/orgs","repos_url":"https://api.github.com/users/VladFomenko/repos","events_url":"https://api.github.com/users/VladFomenko/events{/privacy}","received_events_url":"https://api.github.com/users/VladFomenko/received_events","type":"User","site_admin":false},"html_url":"https://github.com/VladFomenko/list_from_github","description":null,"fork":false,"url":"https://api.github.com/repos/VladFomenko/list_from_github","forks_url":"https://api.github.com/repos/VladFomenko/list_from_github/forks","keys_url":"https://api.github.com/repos/VladFomenko/list_from_github/keys{/key_id}","collaborators_url":"https://api.github.com/repos/VladFomenko/list_from_github/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/VladFomenko/list_from_github/teams","hooks_url":"https://api.github.com/repos/VladFomenko/list_from_github/hooks","issue_events_url":"https://api.github.com/repos/VladFomenko/list_from_github/issues/events{/number}","events_url":"https://api.github.com/repos/VladFomenko/list_from_github/events","assignees_url":"https://api.github.com/repos/VladFomenko/list_from_github/assignees{/user}","branches_url":"https://api.github.com/repos/VladFomenko/list_from_github/branches{/branch}","tags_url":"https://api.github.com/repos/VladFomenko/list_from_github/tags","blobs_url":"https://api.github.com/repos/VladFomenko/list_from_github/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/VladFomenko/list_from_github/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/VladFomenko/list_from_github/git/refs{/sha}","trees_url":"https://api.github.com/repos/VladFomenko/list_from_github/git/trees{/sha}","statuses_url":"https://api.github.com/repos/VladFomenko/list_from_github/statuses/{sha}","languages_url":"https://api.github.com/repos/VladFomenko/list_from_github/languages","stargazers_url":"https://api.github.com/repos/VladFomenko/list_from_github/stargazers","contributors_url":"https://api.github.com/repos/VladFomenko/list_from_github/contributors","subscribers_url":"https://api.github.com/repos/VladFomenko/list_from_github/subscribers","subscription_url":"https://api.github.com/repos/VladFomenko/list_from_github/subscription","commits_url":"https://api.github.com/repos/VladFomenko/list_from_github/commits{/sha}","git_commits_url":"https://api.github.com/repos/VladFomenko/list_from_github/git/commits{/sha}","comments_url":"https://api.github.com/repos/VladFomenko/list_from_github/comments{/number}","issue_comment_url":"https://api.github.com/repos/VladFomenko/list_from_github/issues/comments{/number}","contents_url":"https://api.github.com/repos/VladFomenko/list_from_github/contents/{+path}","compare_url":"https://api.github.com/repos/VladFomenko/list_from_github/compare/{base}...{head}","merges_url":"https://api.github.com/repos/VladFomenko/list_from_github/merges","archive_url":"https://api.github.com/repos/VladFomenko/list_from_github/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/VladFomenko/list_from_github/downloads","issues_url":"https://api.github.com/repos/VladFomenko/list_from_github/issues{/number}","pulls_url":"https://api.github.com/repos/VladFomenko/list_from_github/pulls{/number}","milestones_url":"https://api.github.com/repos/VladFomenko/list_from_github/milestones{/number}","notifications_url":"https://api.github.com/repos/VladFomenko/list_from_github/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/VladFomenko/list_from_github/labels{/name}","releases_url":"https://api.github.com/repos/VladFomenko/list_from_github/releases{/id}","deployments_url":"https://api.github.com/repos/VladFomenko/list_from_github/deployments","created_at":"2023-11-29T11:39:38Z","updated_at":"2023-12-07T14:12:25Z","pushed_at":"2023-12-15T19:55:39Z","git_url":"git://github.com/VladFomenko/list_from_github.git","ssh_url":"git@github.com:VladFomenko/list_from_github.git","clone_url":"https://github.com/VladFomenko/list_from_github.git","svn_url":"https://github.com/VladFomenko/list_from_github","homepage":null,"size":219,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":false,"has_pages":false,"has_discussions":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"public","forks":0,"open_issues":0,"watchers":0,"default_branch":"main"},{"id":729884381,"node_id":"R_kgDOK4Em3Q","name":"practice_hotwire","full_name":"VladFomenko/practice_hotwire","private":false,"owner":{"login":"VladFomenko","id":41300309,"node_id":"MDQ6VXNlcjQxMzAwMzA5","avatar_url":"https://avatars.githubusercontent.com/u/41300309?v=4","gravatar_id":"","url":"https://api.github.com/users/VladFomenko","html_url":"https://github.com/VladFomenko","followers_url":"https://api.github.com/users/VladFomenko/followers","following_url":"https://api.github.com/users/VladFomenko/following{/other_user}","gists_url":"https://api.github.com/users/VladFomenko/gists{/gist_id}","starred_url":"https://api.github.com/users/VladFomenko/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/VladFomenko/subscriptions","organizations_url":"https://api.github.com/users/VladFomenko/orgs","repos_url":"https://api.github.com/users/VladFomenko/repos","events_url":"https://api.github.com/users/VladFomenko/events{/privacy}","received_events_url":"https://api.github.com/users/VladFomenko/received_events","type":"User","site_admin":false},"html_url":"https://github.com/VladFomenko/practice_hotwire","description":null,"fork":false,"url":"https://api.github.com/repos/VladFomenko/practice_hotwire","forks_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/forks","keys_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/keys{/key_id}","collaborators_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/teams","hooks_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/hooks","issue_events_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/issues/events{/number}","events_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/events","assignees_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/assignees{/user}","branches_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/branches{/branch}","tags_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/tags","blobs_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/git/refs{/sha}","trees_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/git/trees{/sha}","statuses_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/statuses/{sha}","languages_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/languages","stargazers_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/stargazers","contributors_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/contributors","subscribers_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/subscribers","subscription_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/subscription","commits_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/commits{/sha}","git_commits_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/git/commits{/sha}","comments_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/comments{/number}","issue_comment_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/issues/comments{/number}","contents_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/contents/{+path}","compare_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/compare/{base}...{head}","merges_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/merges","archive_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/downloads","issues_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/issues{/number}","pulls_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/pulls{/number}","milestones_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/milestones{/number}","notifications_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/labels{/name}","releases_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/releases{/id}","deployments_url":"https://api.github.com/repos/VladFomenko/practice_hotwire/deployments","created_at":"2023-12-10T16:46:34Z","updated_at":"2023-12-10T16:47:26Z","pushed_at":"2023-12-12T13:47:45Z","git_url":"git://github.com/VladFomenko/practice_hotwire.git","ssh_url":"git@github.com:VladFomenko/practice_hotwire.git","clone_url":"https://github.com/VladFomenko/practice_hotwire.git","svn_url":"https://github.com/VladFomenko/practice_hotwire","homepage":null,"size":77,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"has_discussions":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"public","forks":0,"open_issues":0,"watchers":0,"default_branch":"dev"},{"id":554417139,"node_id":"R_kgDOIQu78w","name":"RubyHW","full_name":"VladFomenko/RubyHW","private":false,"owner":{"login":"VladFomenko","id":41300309,"node_id":"MDQ6VXNlcjQxMzAwMzA5","avatar_url":"https://avatars.githubusercontent.com/u/41300309?v=4","gravatar_id":"","url":"https://api.github.com/users/VladFomenko","html_url":"https://github.com/VladFomenko","followers_url":"https://api.github.com/users/VladFomenko/followers","following_url":"https://api.github.com/users/VladFomenko/following{/other_user}","gists_url":"https://api.github.com/users/VladFomenko/gists{/gist_id}","starred_url":"https://api.github.com/users/VladFomenko/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/VladFomenko/subscriptions","organizations_url":"https://api.github.com/users/VladFomenko/orgs","repos_url":"https://api.github.com/users/VladFomenko/repos","events_url":"https://api.github.com/users/VladFomenko/events{/privacy}","received_events_url":"https://api.github.com/users/VladFomenko/received_events","type":"User","site_admin":false},"html_url":"https://github.com/VladFomenko/RubyHW","description":null,"fork":false,"url":"https://api.github.com/repos/VladFomenko/RubyHW","forks_url":"https://api.github.com/repos/VladFomenko/RubyHW/forks","keys_url":"https://api.github.com/repos/VladFomenko/RubyHW/keys{/key_id}","collaborators_url":"https://api.github.com/repos/VladFomenko/RubyHW/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/VladFomenko/RubyHW/teams","hooks_url":"https://api.github.com/repos/VladFomenko/RubyHW/hooks","issue_events_url":"https://api.github.com/repos/VladFomenko/RubyHW/issues/events{/number}","events_url":"https://api.github.com/repos/VladFomenko/RubyHW/events","assignees_url":"https://api.github.com/repos/VladFomenko/RubyHW/assignees{/user}","branches_url":"https://api.github.com/repos/VladFomenko/RubyHW/branches{/branch}","tags_url":"https://api.github.com/repos/VladFomenko/RubyHW/tags","blobs_url":"https://api.github.com/repos/VladFomenko/RubyHW/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/VladFomenko/RubyHW/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/VladFomenko/RubyHW/git/refs{/sha}","trees_url":"https://api.github.com/repos/VladFomenko/RubyHW/git/trees{/sha}","statuses_url":"https://api.github.com/repos/VladFomenko/RubyHW/statuses/{sha}","languages_url":"https://api.github.com/repos/VladFomenko/RubyHW/languages","stargazers_url":"https://api.github.com/repos/VladFomenko/RubyHW/stargazers","contributors_url":"https://api.github.com/repos/VladFomenko/RubyHW/contributors","subscribers_url":"https://api.github.com/repos/VladFomenko/RubyHW/subscribers","subscription_url":"https://api.github.com/repos/VladFomenko/RubyHW/subscription","commits_url":"https://api.github.com/repos/VladFomenko/RubyHW/commits{/sha}","git_commits_url":"https://api.github.com/repos/VladFomenko/RubyHW/git/commits{/sha}","comments_url":"https://api.github.com/repos/VladFomenko/RubyHW/comments{/number}","issue_comment_url":"https://api.github.com/repos/VladFomenko/RubyHW/issues/comments{/number}","contents_url":"https://api.github.com/repos/VladFomenko/RubyHW/contents/{+path}","compare_url":"https://api.github.com/repos/VladFomenko/RubyHW/compare/{base}...{head}","merges_url":"https://api.github.com/repos/VladFomenko/RubyHW/merges","archive_url":"https://api.github.com/repos/VladFomenko/RubyHW/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/VladFomenko/RubyHW/downloads","issues_url":"https://api.github.com/repos/VladFomenko/RubyHW/issues{/number}","pulls_url":"https://api.github.com/repos/VladFomenko/RubyHW/pulls{/number}","milestones_url":"https://api.github.com/repos/VladFomenko/RubyHW/milestones{/number}","notifications_url":"https://api.github.com/repos/VladFomenko/RubyHW/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/VladFomenko/RubyHW/labels{/name}","releases_url":"https://api.github.com/repos/VladFomenko/RubyHW/releases{/id}","deployments_url":"https://api.github.com/repos/VladFomenko/RubyHW/deployments","created_at":"2022-10-19T19:26:35Z","updated_at":"2022-10-20T18:59:50Z","pushed_at":"2023-02-14T21:56:05Z","git_url":"git://github.com/VladFomenko/RubyHW.git","ssh_url":"git@github.com:VladFomenko/RubyHW.git","clone_url":"https://github.com/VladFomenko/RubyHW.git","svn_url":"https://github.com/VladFomenko/RubyHW","homepage":null,"size":5423,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"has_discussions":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":19,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"public","forks":0,"open_issues":19,"watchers":0,"default_branch":"main"},{"id":722919323,"node_id":"R_kgDOKxbfmw","name":"test_deploy_netlify","full_name":"VladFomenko/test_deploy_netlify","private":false,"owner":{"login":"VladFomenko","id":41300309,"node_id":"MDQ6VXNlcjQxMzAwMzA5","avatar_url":"https://avatars.githubusercontent.com/u/41300309?v=4","gravatar_id":"","url":"https://api.github.com/users/VladFomenko","html_url":"https://github.com/VladFomenko","followers_url":"https://api.github.com/users/VladFomenko/followers","following_url":"https://api.github.com/users/VladFomenko/following{/other_user}","gists_url":"https://api.github.com/users/VladFomenko/gists{/gist_id}","starred_url":"https://api.github.com/users/VladFomenko/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/VladFomenko/subscriptions","organizations_url":"https://api.github.com/users/VladFomenko/orgs","repos_url":"https://api.github.com/users/VladFomenko/repos","events_url":"https://api.github.com/users/VladFomenko/events{/privacy}","received_events_url":"https://api.github.com/users/VladFomenko/received_events","type":"User","site_admin":false},"html_url":"https://github.com/VladFomenko/test_deploy_netlify","description":null,"fork":false,"url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify","forks_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/forks","keys_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/keys{/key_id}","collaborators_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/teams","hooks_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/hooks","issue_events_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/issues/events{/number}","events_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/events","assignees_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/assignees{/user}","branches_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/branches{/branch}","tags_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/tags","blobs_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/git/refs{/sha}","trees_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/git/trees{/sha}","statuses_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/statuses/{sha}","languages_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/languages","stargazers_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/stargazers","contributors_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/contributors","subscribers_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/subscribers","subscription_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/subscription","commits_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/commits{/sha}","git_commits_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/git/commits{/sha}","comments_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/comments{/number}","issue_comment_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/issues/comments{/number}","contents_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/contents/{+path}","compare_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/compare/{base}...{head}","merges_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/merges","archive_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/downloads","issues_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/issues{/number}","pulls_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/pulls{/number}","milestones_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/milestones{/number}","notifications_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/labels{/name}","releases_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/releases{/id}","deployments_url":"https://api.github.com/repos/VladFomenko/test_deploy_netlify/deployments","created_at":"2023-11-24T09:05:56Z","updated_at":"2023-11-24T22:25:13Z","pushed_at":"2023-11-28T10:13:00Z","git_url":"git://github.com/VladFomenko/test_deploy_netlify.git","ssh_url":"git@github.com:VladFomenko/test_deploy_netlify.git","clone_url":"https://github.com/VladFomenko/test_deploy_netlify.git","svn_url":"https://github.com/VladFomenko/test_deploy_netlify","homepage":null,"size":634,"stargazers_count":0,"watchers_count":0,"language":"CSS","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"has_discussions":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"public","forks":0,"open_issues":0,"watchers":0,"default_branch":"main"}]'
+  recorded_at: Sun, 17 Dec 2023 17:45:04 GMT
 recorded_with: VCR 6.2.0
